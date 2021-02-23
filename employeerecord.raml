@@ -1,0 +1,99 @@
+#%RAML 1.0
+title: createemployerecord
+description: Create and employee record by posting data
+
+/createemployee:
+  post:
+    body:
+      application/json:
+        type: |
+          {
+
+            "type": "object",
+            "$schema": "http://json-schema.org/draft-03/schema",
+            "properties": {
+              "employee": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  }                                    
+                }
+              }
+            }                           
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            properties:
+              confirmmsg:
+                type: string
+
+/naturalnumber:
+  /{number}:
+    get:
+      body:
+        application/json:
+      responses:
+        200:
+          body:
+            application/json:
+              properties:
+                value:
+                  type: string
+  
+/camelcasestring:
+  post:
+    body:
+      application/json:
+        properties:
+          strName: string
+    responses:
+      200:
+        body:
+          application/json:
+            properties:
+              camelstr: string
+
+/callcreateemployee:
+  post:
+    body:
+      application/json:
+        type: |
+          {
+
+            "type": "object",
+            "$schema": "http://json-schema.org/draft-03/schema",
+            "properties": {
+              "employee": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  }                                    
+                }
+              }
+            }                           
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            properties:
+              confirmmsg:
+                type: string 
+        
+    
